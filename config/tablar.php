@@ -10,11 +10,11 @@ return [
     |
     */
 
-    'title' => 'Tablar',
+    'title' => 'chitMaster',
     'title_prefix' => '',
     'title_postfix' => '',
-    'bottom_title' => 'Tablar',
-    'current_version' => 'v4.8',
+    'bottom_title' => 'chitMaster',
+    'current_version' => 'v0.1',
 
 
     /*
@@ -67,7 +67,7 @@ return [
     |
     */
 
-    'layout' => 'horizontal',
+    'layout' => 'condensed',
     //boxed, combo, condensed, fluid, fluid-vertical, horizontal, navbar-overlap, navbar-sticky, rtl, vertical, vertical-right, vertical-transparent
 
     'layout_light_sidebar' => null,
