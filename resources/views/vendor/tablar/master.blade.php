@@ -20,6 +20,7 @@
     @endif
     {{-- Custom Stylesheets (post Tablar) --}}
     @yield('tablar_css')
+    @livewireStyles
 </head>
 @yield('body')
 @include('tablar::extra.modal')

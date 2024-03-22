@@ -13,5 +13,6 @@
             @include('tablar::partials.footer.bottom')
         </div>
     </div>
+    @livewireScripts
     </body>
 @stop
