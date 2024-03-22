@@ -13,5 +13,36 @@
 <div class="page page-center">
     @yield('content')
 </div>
+
+    @stack('scripts')<script>
+        var passwordField = document.getElementById('password');
+        var showPassword = document.getElementById('showPassword');
+        var hidePassword = document.getElementById('HidePassword');
+        var confirmPasswordField = document.getElementById('confirmPassword');
+        var showConfirmPassword = document.getElementById('showConfirmPassword');
+        var hideConfirmPassword = document.getElementById('HideConfirmPassword');
+    
+        showPasswordToggle.addEventListener('click', function(event) {
+            event.preventDefault();
+            togglePasswordVisibility(passwordField, showPassword, hidePassword);
+        });
+    
+        showConfirmPasswordToggle.addEventListener('click', function(event) {
+            event.preventDefault();
+            togglePasswordVisibility(confirmPasswordField, showConfirmPassword, hideConfirmPassword);
+        });
+    
+        function togglePasswordVisibility(passwordField, showButton, hideButton) {
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                showButton.classList.add('d-none');
+                hideButton.classList.remove('d-none');
+            } else if (passwordField.type === 'text') {
+                passwordField.type = 'password';
+                showButton.classList.remove('d-none');
+                hideButton.classList.add('d-none');
+            }
+        }
+    </script>    
 </body>
 </html>

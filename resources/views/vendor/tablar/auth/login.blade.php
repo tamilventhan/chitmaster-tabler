@@ -4,7 +4,7 @@
 <div class="container container-normal py-4">
     <div class="row align-items-center g-4">
         <div class="col-lg">
-            <div class="container-tight" style="min-height: 100vh;">
+            <div class="container-tight">
                 <div class="text-center mb-4">
                     <a href="." class="navbar-brand navbar-brand-autodark"><img src="./static/logo.svg" height="36"
                             alt=""></a>
@@ -30,23 +30,16 @@
                                     </span>
                                 </label>
                                 <div class="input-group input-group-flat">
-                                    <input type="password" name="password"
-                                        class="form-control @error('password') is-invalid @enderror"
-                                        placeholder="Your password" autocomplete="off">
-                                    <span class="input-group-text">
-                                        <a href="#" class="link-secondary" title="Show password"
-                                            data-bs-toggle="tooltip">
-                                            <!-- Download SVG icon from http://tabler-icons.io/i/eye -->
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
-                                                viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                                                stroke-linecap="round" stroke-linejoin="round">
-                                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                <circle cx="12" cy="12" r="2" />
-                                                <path
-                                                    d="M22 12c-2.667 4.667 -6 7 -10 7s-7.333 -2.333 -10 -7c2.667 -4.667 6 -7 10 -7s7.333 2.333 10 7" />
-                                            </svg>
+                                    <input type="password" id="password" name="password" class="form-control"
+                                        placeholder="********" autocomplete="off" required>
+                                    <div class="input-group-text">
+                                        <a href="#" class="link-secondary" id="showPasswordToggle">
+                                            <span id="showPassword" title="Show password"
+                                                data-bs-toggle="tooltip">@include('icons.eye')</span>
+                                            <span id="HidePassword" class="d-none" title="Hide password"
+                                                data-bs-toggle="tooltip">@include('icons.eye-off')</span>
                                         </a>
-                                    </span>
+                                    </div>
                                     @error('password')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror
@@ -104,23 +97,3 @@
     </div>
 </div>
 @endsection
-@push('scripts')
-<script>
-    var passwordField = document.getElementById('password');
-    var showPassword = document.getElementById('showPassword');
-    var hidePassword = document.getElementById('HidePassword');
-
-    showPasswordToggle.addEventListener('click', function(event) {
-        event.preventDefault();
-        if (passwordField.type === 'password') {
-            passwordField.type = 'text';
-            showPassword.classList.add('d-none');
-            hidePassword.classList.remove('d-none');
-        } else if (passwordField.type === 'text') {
-            passwordField.type = 'password';
-            showPassword.classList.remove('d-none');
-            hidePassword.classList.add('d-none');
-        }
-    });
-</script>
-@endpush
