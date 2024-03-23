@@ -1,5 +1,5 @@
-<div class="hidden sm:block">
-    <div class="py-8">
-        <div class="border-t border-gray-200 dark:border-gray-700"></div>
+<div class="block">
+    <div class="py-7">
+        <div class="border-top border-gray"></div>
     </div>
 </div>
