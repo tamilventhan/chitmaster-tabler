@@ -8,7 +8,7 @@
             <div class="row g-2 align-items-center">
                 <div class="col">
                     <h2 class="page-title">
-                        Empty page
+                        Dashboard
                     </h2>
                 </div>
             </div>

@@ -14,7 +14,7 @@ return [
     'title_prefix' => '',
     'title_postfix' => '',
     'bottom_title' => 'chitMaster',
-    'current_version' => 'v0.1',
+    'current_version' => 'V0.01',
 
 
     /*

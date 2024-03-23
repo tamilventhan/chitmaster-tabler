@@ -1,10 +1,9 @@
-<footer class="footer footer-transparent d-print-none border-top">
+<footer class="footer footer-light d-print-none border-top">
     <div class="container-xl">
         <div class="row text-center align-items-center flex-row-reverse">
             <div class="col-lg-auto ms-lg-auto">
                 <ul class="list-inline list-inline-dots mb-0">
-                    <li class="list-inline-item"><a href="https://github.com/takielias/tablar" target="_blank"
-                                                    class="link-secondary" rel="noopener">Source code</a></li>
+
                     <li class="list-inline-item">
                         <a href="https://www.buymeacoffee.com/takielias" target="_blank" class="link-secondary"
                            rel="noopener">
@@ -25,13 +24,13 @@
             <div class="col-12 col-lg-auto mt-3 mt-lg-0">
                 <ul class="list-inline list-inline-dots mb-0">
                     <li class="list-inline-item">
-                        Copyright &copy; 2022
-                        <a href="https://ebuz.xyz"
-                           class="link-secondary">{{config('tablar.bottom_title', 'TabLar')}}</a>.
+                        Copyright &copy; {{ date('Y') }}
+                        <a href="https://chitmaster.com"
+                           class="link-primary">{{config('tablar.bottom_title', 'TabLar')}}</a>.
                         All rights reserved.
                     </li>
                     <li class="list-inline-item">
-                        <a href="https://ebuz.xyz" class="link-secondary" rel="noopener">
+                        <a href="https://chitmaster.com" class="link-primary" rel="noopener">
                             {{config('tablar.current_version', '1.0')}}
                         </a>
                     </li>
