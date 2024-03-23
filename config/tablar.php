@@ -42,11 +42,11 @@ return [
     'auth_logo' => [
         'enabled' => false,
         'img' => [
-            'path' => 'assets/tablar-logo.png',
+            'path' => 'https://cmoffice.com.my/wp-content/uploads/2020/03/logopng.png',
             'alt' => 'Auth Logo',
-            'class' => '',
-            'width' => 50,
-            'height' => 50,
+            'class' => 'navbar-brand-image',
+            'width' => 300,
+            'height' => 300,
         ],
     ],
 
@@ -67,7 +67,7 @@ return [
     |
     */
 
-    'layout' => 'condensed',
+    'layout' => 'horizontal',
     //boxed, combo, condensed, fluid, fluid-vertical, horizontal, navbar-overlap, navbar-sticky, rtl, vertical, vertical-right, vertical-transparent
 
     'layout_light_sidebar' => null,
@@ -85,7 +85,7 @@ return [
     |
     */
 
-    'sticky_top_nav_bar' => false,
+    'sticky_top_nav_bar' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -129,7 +129,7 @@ return [
     | Display Alert Visibility.
     |
     */
-    'display_alert' => false,
+    'display_alert' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -175,9 +175,9 @@ return [
         ],
 
         [
-            'text' => 'Support 2',
+            'text' => 'Accounts',
             'url' => '#',
-            'icon' => 'ti ti-help',
+            'icon' => 'ti ti-book',
             'active' => ['support2'],
             'submenu' => [
                 [
@@ -189,9 +189,9 @@ return [
         ],
 
         [
-            'text' => 'Support 3',
+            'text' => 'Masters',
             'url' => '#',
-            'icon' => 'ti ti-help',
+            'icon' => 'ti ti-database-star',
             'active' => ['support3'],
             'submenu' => [
                 [

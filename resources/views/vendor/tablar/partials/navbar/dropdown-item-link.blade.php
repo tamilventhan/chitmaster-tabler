@@ -5,7 +5,7 @@
                     <span class="nav-link-icon d-md-none d-lg-inline-block">
               @if(isset($item['icon']))
                             <i class="{{ $item['icon'] ?? '' }} {{
-                isset($item['icon_color']) ? 'text-' . $item['icon_color'] : ''
+                isset($item['icon_color']) ? 'text-' . $item['icon_color'] : 'text-pink'
             }}"></i>
                         @else
                             <i class="ti ti-brand-tabler"></i>
