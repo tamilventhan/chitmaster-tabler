@@ -118,7 +118,7 @@ return [
     'register_url' => 'register',
     'password_reset_url' => 'password.request',
     'password_email_url' => 'password.email',
-    'profile_url' => false,
+    'profile_url' => 'profile.show',
     'setting_url' => false,
 
     /*
@@ -145,19 +145,29 @@ return [
     'menu' => [
         // Navbar items:
         [
-            'text' => 'Home',
+            'text' => 'Dashboard',
             'icon' => 'ti ti-home',
-            'url' => 'home'
+            'url' => 'dashboard',
         ],
 
         [
-            'text' => 'Support 1',
+            'text' => 'People',
             'url' => '#',
-            'icon' => 'ti ti-help',
+            'icon' => 'ti ti-users',
             'active' => ['support1'],
             'submenu' => [
                 [
-                    'text' => 'Ticket',
+                    'text' => 'Subscribers',
+                    'url' => 'support1',
+                    'icon' => 'ti ti-article',
+                ],
+                [
+                    'text' => 'Agents',
+                    'url' => 'support1',
+                    'icon' => 'ti ti-article',
+                ],
+                [
+                    'text' => 'Employees',
                     'url' => 'support1',
                     'icon' => 'ti ti-article',
                 ]
