@@ -1,6 +1,7 @@
-<footer class="footer footer-light d-print-none border-top">
+<footer class="footer footer-transparent d-print-none">
     <div class="container-xl">
         <div class="row text-center align-items-center flex-row-reverse">
+            <div class="hr-text hr-text-left">Footer</div>
             <div class="col-lg-auto ms-lg-auto">
                 <ul class="list-inline list-inline-dots mb-0">
 
@@ -16,7 +17,7 @@
                                 <path
                                     d="M19.5 12.572l-7.5 7.428l-7.5 -7.428m0 0a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572"/>
                             </svg>
-                            Sponsor
+                            Crafted by Tamilventhan.T
                         </a>
                     </li>
                 </ul>
