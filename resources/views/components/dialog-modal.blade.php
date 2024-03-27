@@ -22,10 +22,10 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
 
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="staticBackdropLabel">{{ $title }}</h1>
-                    {{-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> --}}
-                </div>
+                <div class="h3 mt-3">{{ $title }}</div>
+                {{-- <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div> --}}
                 <div class="modal-body">
                     {{ $content }}
                 </div>
