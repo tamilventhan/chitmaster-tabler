@@ -52,6 +52,7 @@
         @endif
 
         <div class="flex items-center mt-5">
+            <div class="d-lg-flex justify-content-end">  
             <x-button wire:click="confirmLogout" wire:loading.attr="disabled">
                 {{ __('Log Out Other Browser Sessions') }}
             </x-button>
@@ -59,6 +60,7 @@
             <x-action-message class="ms-3" on="loggedOut">
                 {{ __('Done.') }}
             </x-action-message>
+            </div>
         </div>
 
         <!-- Log Out Other Devices Confirmation Modal -->
