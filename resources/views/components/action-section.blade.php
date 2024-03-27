@@ -1,11 +1,11 @@
-<div {{ $attributes->merge(['class' => 'md:grid md:grid-cols-3 md:gap-6']) }}>
+<div {{ $attributes->merge(['class' => '']) }}>
     <x-section-title>
         <x-slot name="title">{{ $title }}</x-slot>
         <x-slot name="description">{{ $description }}</x-slot>
     </x-section-title>
 
-    <div class="mt-5">
-        <div class="card p-3">
+    <div class="card">
+        <div class=" p-5">
             {{ $content }}
         </div>
     </div>

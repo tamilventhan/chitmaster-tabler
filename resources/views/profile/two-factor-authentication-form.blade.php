@@ -1,13 +1,13 @@
-<x-action-section>
-    <x-slot name="title">
+<div class="card p-3">
+    <div name="title">
         {{ __('Two Factor Authentication') }}
-    </x-slot>
+    </div>
 
-    <x-slot name="description">
+    <div name="description">
         {{ __('Add additional security to your account using two factor authentication.') }}
-    </x-slot>
+    </div>
 
-    <x-slot name="content">
+    <div name="content">
         <h3 class="text-lg fw-medium text-gray">
             @if ($this->enabled)
                 @if ($showingConfirmation)
@@ -43,7 +43,7 @@
                 </div>
 
                 <div class="mt-4 small text-gray">
-                    <p class="font-semibold">
+                    <p class="fw-semibold">
                         {{ __('Setup Key') }}: {{ decrypt($this->user->two_factor_secret) }}
                     </p>
                 </div>
@@ -120,5 +120,5 @@
 
             @endif
         </div>
-    </x-slot>
-</x-action-section>
+    </div>
+</div>

@@ -6,20 +6,17 @@
         <x-slot name="description">{{ $description }}</x-slot>
     </x-section-title>
 
-    <div>
+    <div class="card">
         <form wire:submit="{{ $submit }}">
-            <div class="card p-2">
             <div class="card-body">
-                    {{ $form }}
+                {{ $form }}
             </div>
 
-
-                @if (isset($actions))
-                <div class="card-footer">
-                    {{ $actions }}
-                </div>
-                @endif
+            @if (isset($actions))
+            <div class="card-footer">
+                {{ $actions }}
             </div>
+            @endif
         </form>
     </div>
 </div>
