@@ -40,10 +40,10 @@ return [
     */
 
     'auth_logo' => [
-        'enabled' => false,
+        'enabled' => true,
         'img' => [
-            'path' => 'https://cmoffice.com.my/wp-content/uploads/2020/03/logopng.png',
-            'alt' => 'Auth Logo',
+            'path' => asset("images/master.png"),
+            'alt' => 'chit Master',
             'class' => 'navbar-brand-image',
             'width' => 300,
             'height' => 300,
