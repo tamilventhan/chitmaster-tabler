@@ -162,29 +162,25 @@ return [
             'icon' => 'ti ti-home',
             'url' => 'dashboard',
         ],
-
         [
-            'text' => 'People',
-            'url' => '#',
-            'icon' => 'ti ti-users',
-            'active' => ['support1'],
-            'submenu' => [
-                [
-                    'text' => 'Subscribers',
-                    'url' => 'support1',
-                    'icon' => 'ti ti-article',
-                ],
-                [
-                    'text' => 'Agents',
-                    'url' => 'support1',
-                    'icon' => 'ti ti-article',
-                ],
-                [
-                    'text' => 'Employees',
-                    'url' => 'support1',
-                    'icon' => 'ti ti-article',
-                ]
-            ],
+            'text' => 'Subscribers',
+            'icon' => 'ti ti-home',
+            'url' => 'subscribers',
+        ],
+        [
+            'text' => 'Agents',
+            'icon' => 'ti ti-home',
+            'url' => 'agents',
+        ],
+        [
+            'text' => 'Chit Group',
+            'icon' => 'ti ti-home',
+            'url' => 'chit-group',
+        ],
+        [
+            'text' => 'Auctions',
+            'icon' => 'ti ti-home',
+            'url' => 'auctions',
         ],
 
         [
@@ -194,8 +190,18 @@ return [
             'active' => ['support2'],
             'submenu' => [
                 [
-                    'text' => 'Ticket',
-                    'url' => 'support2',
+                    'text' => 'Chit Receipts',
+                    'url' => 'chit-receipts',
+                    'icon' => 'ti ti-article',
+                ],
+                [
+                    'text' => 'Bank Accounts',
+                    'url' => 'bank-accounts',
+                    'icon' => 'ti ti-article',
+                ],
+                [
+                    'text' => 'Cheque Book',
+                    'url' => 'cheque-book',
                     'icon' => 'ti ti-article',
                 ]
             ],
@@ -208,8 +214,18 @@ return [
             'active' => ['support3'],
             'submenu' => [
                 [
-                    'text' => 'Ticket',
-                    'url' => 'support3',
+                    'text' => 'Companies',
+                    'url' => 'companies',
+                    'icon' => 'ti ti-article',
+                ],
+                [
+                    'text' => 'Branches',
+                    'url' => 'branches',
+                    'icon' => 'ti ti-article',
+                ],
+                [
+                    'text' => 'Employees',
+                    'url' => 'employees',
                     'icon' => 'ti ti-article',
                 ]
             ],
