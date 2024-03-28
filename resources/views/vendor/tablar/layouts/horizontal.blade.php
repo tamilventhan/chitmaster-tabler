@@ -3,7 +3,7 @@
     $layoutData['cssClasses'] =  'navbar navbar-expand-md '.$stickyTopClass.' d-print-none';
 @endphp
 @section('body')
-    <body style="font-family:JetBrains Mono, sans-serif">
+    <body style="font-family:Space Grotesk, sans-serif">
     <div class="page">
         <!-- Top Navbar -->
         @include('tablar::partials.navbar.topbar')
