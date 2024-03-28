@@ -42,7 +42,7 @@ return [
     'auth_logo' => [
         'enabled' => true,
         'img' => [
-            'path' => asset("images/master.png"),
+            'path' => 'images/master.png',
             'alt' => 'chit Master',
             'class' => 'navbar-brand-image',
             'width' => 300,
