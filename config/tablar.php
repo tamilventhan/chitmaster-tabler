@@ -159,27 +159,27 @@ return [
         // Navbar items:
         [
             'text' => 'Dashboard',
-            'icon' => 'ti ti-home',
+            'icon' => 'ti ti-dashboard',
             'url' => 'dashboard',
         ],
         [
             'text' => 'Subscribers',
-            'icon' => 'ti ti-home',
+            'icon' => 'ti ti-users',
             'url' => 'subscribers',
         ],
         [
             'text' => 'Agents',
-            'icon' => 'ti ti-home',
+            'icon' => 'ti ti-user-hexagon',
             'url' => 'agents',
         ],
         [
             'text' => 'Chit Group',
-            'icon' => 'ti ti-home',
+            'icon' => 'ti ti-users-group',
             'url' => 'chit-group',
         ],
         [
             'text' => 'Auctions',
-            'icon' => 'ti ti-home',
+            'icon' => 'ti ti-user-check',
             'url' => 'auctions',
         ],
 
@@ -192,17 +192,17 @@ return [
                 [
                     'text' => 'Chit Receipts',
                     'url' => 'chit-receipts',
-                    'icon' => 'ti ti-article',
+                    'icon' => 'ti ti-receipt-rupee',
                 ],
                 [
                     'text' => 'Bank Accounts',
                     'url' => 'bank-accounts',
-                    'icon' => 'ti ti-article',
+                    'icon' => 'ti ti-building-bank',
                 ],
                 [
                     'text' => 'Cheque Book',
                     'url' => 'cheque-book',
-                    'icon' => 'ti ti-article',
+                    'icon' => 'ti ti-notebook',
                 ]
             ],
         ],
@@ -216,17 +216,17 @@ return [
                 [
                     'text' => 'Companies',
                     'url' => 'companies',
-                    'icon' => 'ti ti-article',
+                    'icon' => 'ti ti-building-community',
                 ],
                 [
                     'text' => 'Branches',
                     'url' => 'branches',
-                    'icon' => 'ti ti-article',
+                    'icon' => 'ti ti-map-pins',
                 ],
                 [
                     'text' => 'Employees',
                     'url' => 'employees',
-                    'icon' => 'ti ti-article',
+                    'icon' => 'ti ti-user-star',
                 ]
             ],
         ],
