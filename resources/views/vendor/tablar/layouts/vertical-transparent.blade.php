@@ -1,8 +1,9 @@
 @php
     $layoutData['cssClasses'] =  'navbar navbar-vertical navbar-expand-lg navbar-transparent';
+    $fontStyle = config('tablar.font_style') ? 'Space Grotesk, sans-serif' : '';
 @endphp
 @section('body')
-    <body>
+    <body style="font-family:{{ $fontStyle }}">
     <div class="page">
         <!-- Sidebar -->
         @include('tablar::partials.navbar.sidebar')

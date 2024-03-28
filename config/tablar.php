@@ -74,6 +74,19 @@ return [
     'layout_light_topbar' => true,
     'layout_enable_top_header' => false,
 
+
+
+        /*
+    |--------------------------------------------------------------------------
+    | Font Style
+    |--------------------------------------------------------------------------
+    |
+    | apply font style on body section,
+    |
+    */
+
+    'font_style' => 'Space Grotesk, sans-serif',
+
     /*
     |--------------------------------------------------------------------------
     | Sticky Navbar for Top Nav
