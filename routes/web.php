@@ -1,8 +1,9 @@
 <?php
 
 
-use App\Livewire\Employees;
+use App\Livewire\Branches;
 use App\Livewire\Companies;
+use App\Livewire\Employees;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -21,3 +22,4 @@ Route::middleware([
 
 Route::get('/employees',Employees::class)->name('employees');
 Route::get('/companies',Companies::class)->name('companies');
+Route::get('/branches',Branches::class)->name('branches');

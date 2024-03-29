@@ -11,6 +11,8 @@ class Companies extends Component
     use WithPagination;
     public $sortField = 'id'; // Default sorting field
     public $sortAsc = true; // Default sorting direction
+
+    
     public function sortBy($field)
     {
         if ($this->sortField === $field) {
