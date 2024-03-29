@@ -224,6 +224,11 @@ return [
                     'icon' => 'ti ti-map-pins',
                 ],
                 [
+                    'text' => 'Designations',
+                    'url' => 'designations',
+                    'icon' => 'ti ti-user-bolt',
+                ],
+                [
                     'text' => 'Employees',
                     'url' => 'employees',
                     'icon' => 'ti ti-user-star',
