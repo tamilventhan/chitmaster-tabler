@@ -65,6 +65,9 @@
                     </div>
                 </div>
                 @endforeach
+                <div class="d-flex mt-4">
+                    {{ $employees->links('tablar::pagination') }}
+                </div>
             </div>
 
         </div>

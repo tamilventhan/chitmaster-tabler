@@ -2,11 +2,14 @@
 
 namespace App\Livewire;
 
-use Livewire\Component;
 use App\Models\User;
+use Livewire\Component;
+use Livewire\WithPagination;
 
 class Employees extends Component
 {
+    use WithPagination;
+    
     public function render()
     {
 

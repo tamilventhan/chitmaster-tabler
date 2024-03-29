@@ -1,73 +1,48 @@
 @if ($paginator->hasPages())
     <p class="m-0 text-muted">Showing <span>{{ $paginator->firstItem() }}</span> to <span>{{ $paginator->lastItem() }}</span> of <span>{{ $paginator->total() }}</span> entries</p>
     <ul class="pagination m-0 ms-auto">
+        {{-- First Page Link --}}
+        <li class="page-item {{ $paginator->onFirstPage() ? 'disabled' : '' }}">
+            <a href="{{ $paginator->url(1) }}" class="page-link" wire:click.prevent="gotoPage(1)"><< First</a>
+        </li>
+
+        {{-- Previous Page Link --}}
         @if ($paginator->onFirstPage())
             <li class="page-item disabled">
-                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">
-                    <!-- Download SVG icon from http://tabler-icons.io/i/chevron-left -->
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
-                         stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
-                         stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                        <polyline points="15 6 9 12 15 18"/>
-                    </svg>
-                    Previous
-                </a>
+                <span class="page-link">< Previous</span>
             </li>
         @else
             <li class="page-item">
-                <a class="page-link" href="{{ $paginator->previousPageUrl() }}" tabindex="-1" aria-disabled="true">
-                    <!-- Download SVG icon from http://tabler-icons.io/i/chevron-left -->
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
-                         stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
-                         stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                        <polyline points="15 6 9 12 15 18"/>
-                    </svg>
-                    Previous
-                </a>
+                <a href="{{ $paginator->previousPageUrl() }}" class="page-link" wire:click.prevent="previousPage">< Previous</a>
             </li>
         @endif
 
-        @foreach ($elements as $element)
-            @if (is_string($element))
-                <li class="page-item disabled" aria-disabled="true"><span class="page-link">{{ $element }}</span></li>
-            @endif
-            @if (is_array($element))
-                @foreach ($element as $page => $url)
-                    @if ($page == $paginator->currentPage())
-                        <li class="page-item active"><a class="page-link" href="#">{{ $page }}</a></li>
-                    @else
-                        <li class="page-item"><a class="page-link" href="{{ $url }}">{{ $page }}</a></li>
-                    @endif
-                @endforeach
-            @endif
-        @endforeach
+        {{-- Display up to 5 pages before the current page --}}
+        @for ($i = max(1, $paginator->currentPage() - 5); $i < $paginator->currentPage(); $i++)
+            <li class="page-item"><a class="page-link" href="{{ $paginator->url($i) }}" wire:click.prevent="gotoPage({{ $i }})">{{ $i }}</a></li>
+        @endfor
+
+        {{-- Current Page --}}
+        <li class="page-item active"><a class="page-link" href="#">{{ $paginator->currentPage() }}</a></li>
+
+        {{-- Display up to 5 pages after the current page --}}
+        @for ($i = $paginator->currentPage() + 1; $i <= min($paginator->currentPage() + 5, $paginator->lastPage()); $i++)
+            <li class="page-item"><a class="page-link" href="{{ $paginator->url($i) }}" wire:click.prevent="gotoPage({{ $i }})">{{ $i }}</a></li>
+        @endfor
 
         @if ($paginator->hasMorePages())
             <li class="page-item">
-                <a class="page-link" href="{{ $paginator->nextPageUrl() }}">
-                    Next <!-- Download SVG icon from http://tabler-icons.io/i/chevron-right -->
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
-                         stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
-                         stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                        <polyline points="9 6 15 12 9 18"/>
-                    </svg>
-                </a>
+                <a class="page-link" href="{{ $paginator->nextPageUrl() }}" wire:click.prevent="nextPage">Next ></a>
             </li>
         @else
             <li class="page-item disabled">
-                <a class="page-link" href="#">
-                   Next <!-- Download SVG icon from http://tabler-icons.io/i/chevron-right -->
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
-                         stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
-                         stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                        <polyline points="9 6 15 12 9 18"/>
-                    </svg>
-                </a>
+                <span class="page-link">Next ></span>
             </li>
         @endif
+
+        {{-- Last Page --}}
+        <li class="page-item">
+            <a class="page-link" href="{{ $paginator->url($paginator->lastPage()) }}" wire:click.prevent="gotoPage({{ $paginator->lastPage() }})">Last >></a>
+        </li>
     </ul>
 @endif
