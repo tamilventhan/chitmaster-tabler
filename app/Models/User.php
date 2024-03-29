@@ -3,12 +3,14 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Models\Designation;
+use Laravel\Sanctum\HasApiTokens;
+use Laravel\Jetstream\HasProfilePhoto;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Laravel\Fortify\TwoFactorAuthenticatable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-use Laravel\Fortify\TwoFactorAuthenticatable;
-use Laravel\Jetstream\HasProfilePhoto;
-use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
@@ -17,6 +19,7 @@ class User extends Authenticatable
     use HasProfilePhoto;
     use Notifiable;
     use TwoFactorAuthenticatable;
+    use SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -27,6 +30,23 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'profile_photo_path',
+        'gender',
+        'dob',
+        'doj',
+        'primary_mobile',
+        'secondary_mobile',
+        'father',
+        'mother',
+        'spouse',
+        'aadhaar_card',
+        'pan_card',
+        'created_at',
+        'updated_at',
+        'created_by',
+        'updated_by',
+        'designation_id',
+        'branch_id',
     ];
 
     /**
@@ -60,6 +80,32 @@ class User extends Authenticatable
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
+            'dob' => 'date',
+            'doj' => 'date',
         ];
+    }
+
+
+    /*** Get the branch associated with the user. */
+    public function branch()
+    {
+        return $this->belongsTo(Branch::class);
+    }
+
+    /*** Get the designation associated with the user. */
+    public function designation()
+    {
+        return $this->belongsTo(Designation::class);
+    }
+
+    public function createdBy()
+    {
+        return $this->belongsTo(User::class, 'created_by');
+    }
+
+    /*** Get the user who last updated the designation. */
+    public function updatedBy()
+    {
+        return $this->belongsTo(User::class, 'updated_by');
     }
 }

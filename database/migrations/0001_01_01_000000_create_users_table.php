@@ -20,7 +20,18 @@ return new class extends Migration
             $table->rememberToken();
             $table->foreignId('current_team_id')->nullable();
             $table->string('profile_photo_path', 2048)->nullable();
+            $table->enum('gender', ['male', 'female', 'transgender']);
+            $table->date('dob')->nullable();
+            $table->date('doj')->nullable();
+            $table->string('primary_mobile')->unique()->nullable();
+            $table->string('secondary_mobile')->nullable();
+            $table->string('father')->nullable();
+            $table->string('mother')->nullable();
+            $table->string('spouse')->nullable();
+            $table->string('aadhaar_card')->nullable()->unique();
+            $table->string('pan_card')->nullable()->unique();
             $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {

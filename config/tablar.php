@@ -187,7 +187,7 @@ return [
             'text' => 'Accounts',
             'url' => '#',
             'icon' => 'ti ti-book',
-            'active' => ['support2'],
+            'active' => ['chit-receipts','bank-accounts','cheque-book'],
             'submenu' => [
                 [
                     'text' => 'Chit Receipts',
@@ -211,7 +211,7 @@ return [
             'text' => 'Masters',
             'url' => '#',
             'icon' => 'ti ti-database-star',
-            'active' => ['support3'],
+            'active' => ['companies','branches','designations','employees'],
             'submenu' => [
                 [
                     'text' => 'Companies',
@@ -222,6 +222,11 @@ return [
                     'text' => 'Branches',
                     'url' => 'branches',
                     'icon' => 'ti ti-map-pins',
+                ],
+                [
+                    'text' => 'Designations',
+                    'url' => 'designations',
+                    'icon' => 'ti ti-user-bolt',
                 ],
                 [
                     'text' => 'Employees',
