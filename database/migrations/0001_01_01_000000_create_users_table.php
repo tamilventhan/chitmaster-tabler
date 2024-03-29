@@ -23,15 +23,13 @@ return new class extends Migration
             $table->enum('gender', ['male', 'female', 'transgender']);
             $table->date('dob')->nullable();
             $table->date('doj')->nullable();
-            $table->string('primary_mobile')->unique();
+            $table->string('primary_mobile')->unique()->nullable();
             $table->string('secondary_mobile')->nullable();
             $table->string('father')->nullable();
             $table->string('mother')->nullable();
             $table->string('spouse')->nullable();
             $table->string('aadhaar_card')->nullable()->unique();
             $table->string('pan_card')->nullable()->unique();
-            $table->unsignedBigInteger('designation_id')->nullable();
-            $table->unsignedBigInteger('branch_id')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
