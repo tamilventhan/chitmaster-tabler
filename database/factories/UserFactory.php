@@ -36,6 +36,20 @@ class UserFactory extends Factory
             'remember_token' => Str::random(10),
             'profile_photo_path' => null,
             'current_team_id' => null,
+            'gender' => $this->faker->randomElement(['male', 'female', 'transgender']),
+            'dob' => $this->faker->date(),
+            'doj' => $this->faker->date(),
+            'primary_mobile' => $this->faker->phoneNumber,
+            'secondary_mobile' => $this->faker->phoneNumber,
+            'father' => $this->faker->name('male'),
+            'mother' => $this->faker->name('female'),
+            'spouse' => $this->faker->name(),
+            'aadhaar_card' => $this->faker->numerify('############'),
+            'pan_card' => $this->faker->bothify('??#####'),
+            'created_by' => null,
+            'updated_by' => null,
+            'designation_id' => null,
+            'branch_id' => null,
         ];
     }
 
