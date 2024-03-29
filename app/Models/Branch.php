@@ -14,7 +14,7 @@ class Branch extends Model
     protected $fillable = [
         'name',
         'active',
-        'branch_id',
+        'company_id',
         'created_by',
         'updated_by',
     ];
@@ -29,7 +29,7 @@ class Branch extends Model
     /*** Get the company associated with the branch. */
     public function company()
     {
-        return $this->belongsTo(Company::class, 'branch_id');
+        return $this->belongsTo(Company::class);
     }
 
     /*** Get the user who created the designation. */
