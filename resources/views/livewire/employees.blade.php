@@ -27,8 +27,8 @@
                 <div class="col-md-6 col-lg-3">
                     <div class="card">
                         <div class="card-body p-4 text-center">
-                            <span class="avatar avatar-xl mb-3 rounded"
-                                style="background-image: url(./static/avatars/000m.jpg)"></span>
+                            {{-- <span class="avatar avatar-xl mb-3 rounded"style="background-image: url({{ asset('storage/'.$employee->avatar) }})"></span> --}}
+                            <img src="{{ $employee->profile_photo_url }}" alt="{{ $employee->name }}" class="avatar avatar-xl mb-3 rounded">
                             <h3 class="m-0 mb-1"><a href="#">{{ $employee->name }}</a></h3>
                             <div class="text-secondary">{{ $employee->email ??'' }}</div>
                             <div class="mt-3">
