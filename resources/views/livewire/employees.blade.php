@@ -30,9 +30,9 @@
                             <span class="avatar avatar-xl mb-3 rounded"
                                 style="background-image: url(./static/avatars/000m.jpg)"></span>
                             <h3 class="m-0 mb-1"><a href="#">{{ $employee->name }}</a></h3>
-                            <div class="text-secondary">UI Designer</div>
+                            <div class="text-secondary">{{ $employee->email ??'' }}</div>
                             <div class="mt-3">
-                                <span class="badge bg-purple-lt">Owner</span>
+                                <span class="badge bg-purple-lt">{{ $employee->designation->name??'' }}</span>
                             </div>
                         </div>
                         <div class="d-flex">
@@ -65,7 +65,7 @@
                     </div>
                 </div>
                 @endforeach
-                <div class="d-flex mt-4">
+                <div class="d-flex mt-4 justify-content-center">
                     {{ $employees->links('tablar::pagination') }}
                 </div>
             </div>

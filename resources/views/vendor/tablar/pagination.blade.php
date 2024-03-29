@@ -1,5 +1,5 @@
 @if ($paginator->hasPages())
-    <p class="m-0 text-muted">Showing <span>{{ $paginator->firstItem() }}</span> to <span>{{ $paginator->lastItem() }}</span> of <span>{{ $paginator->total() }}</span> entries</p>
+    <p class="m-0 d-none d-sm-block text-muted">Showing <span>{{ $paginator->firstItem() }}</span> to <span>{{ $paginator->lastItem() }}</span> of <span>{{ $paginator->total() }}</span> entries</p>
     <ul class="pagination m-0 ms-auto">
         {{-- First Page Link --}}
         <li class="page-item {{ $paginator->onFirstPage() ? 'disabled' : '' }}">
@@ -18,7 +18,7 @@
         @endif
 
         {{-- Display up to 5 pages before the current page --}}
-        @for ($i = max(1, $paginator->currentPage() - 5); $i < $paginator->currentPage(); $i++)
+        @for ($i = max(1, $paginator->currentPage() - 3); $i < $paginator->currentPage(); $i++)
             <li class="page-item"><a class="page-link" href="{{ $paginator->url($i) }}" wire:click.prevent="gotoPage({{ $i }})">{{ $i }}</a></li>
         @endfor
 
@@ -26,7 +26,7 @@
         <li class="page-item active"><a class="page-link" href="#">{{ $paginator->currentPage() }}</a></li>
 
         {{-- Display up to 5 pages after the current page --}}
-        @for ($i = $paginator->currentPage() + 1; $i <= min($paginator->currentPage() + 5, $paginator->lastPage()); $i++)
+        @for ($i = $paginator->currentPage() + 1; $i <= min($paginator->currentPage() + 3, $paginator->lastPage()); $i++)
             <li class="page-item"><a class="page-link" href="{{ $paginator->url($i) }}" wire:click.prevent="gotoPage({{ $i }})">{{ $i }}</a></li>
         @endfor
 
