@@ -103,7 +103,7 @@ class User extends Authenticatable
         return $this->belongsTo(User::class, 'created_by');
     }
 
-    /*** Get the user who last updated the designation. */
+    /*** Get the user who last updated the user. */
     public function updatedBy()
     {
         return $this->belongsTo(User::class, 'updated_by');
