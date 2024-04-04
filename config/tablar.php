@@ -42,7 +42,7 @@ return [
     'auth_logo' => [
         'enabled' => true,
         'img' => [
-            'path' => 'images/master.png',
+            'path' => 'https://seeklogo.com/images/M/master-logo-62A12CB590-seeklogo.com.png',
             'alt' => 'chit Master',
             'class' => 'navbar-brand-image',
             'width' => 300,
