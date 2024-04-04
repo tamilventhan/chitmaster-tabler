@@ -1,6 +1,7 @@
 <?php
 
 
+use App\Livewire\Agents;
 use App\Livewire\Branches;
 use App\Livewire\Companies;
 use App\Livewire\Employees;
@@ -25,3 +26,4 @@ Route::get('/employees',Employees::class)->name('employees');
 Route::get('/companies',Companies::class)->name('companies');
 Route::get('/branches',Branches::class)->name('branches');
 Route::get('/designations',Designations::class)->name('designations');
+Route::get('/agents',Agents::class)->name('agents');

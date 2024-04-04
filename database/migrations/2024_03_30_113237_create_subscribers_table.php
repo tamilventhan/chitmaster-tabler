@@ -21,6 +21,7 @@
                 $table->date('date_of_birth');
                 $table->string('primary_mobile');
                 $table->string('secondary_mobile')->nullable();
+                $table->string('email')->nullable()->unique();
                 $table->string('aadhaar_number')->nullable();
                 $table->string('pan_number')->nullable();
                 $table->string('family_card')->nullable();

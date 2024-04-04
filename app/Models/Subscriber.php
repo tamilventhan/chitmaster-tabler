@@ -18,6 +18,7 @@ class Subscriber extends Model
         'date_of_birth',
         'primary_mobile',
         'secondary_mobile',
+        'email',
         'aadhaar_number',
         'pan_number',
         'family_card',

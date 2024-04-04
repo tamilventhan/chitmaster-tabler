@@ -29,6 +29,7 @@ class SubscriberFactory extends Factory
             'date_of_birth' => $this->faker->date,
             'primary_mobile' => $this->faker->phoneNumber,
             'secondary_mobile' => $this->faker->phoneNumber,
+            'email' => fake()->unique()->safeEmail(),
             'aadhaar_number' => $this->faker->numerify('############'),
             'pan_number' => $this->faker->bothify('??####??####??'),
             'family_card' => $this->faker->imageUrl(),
