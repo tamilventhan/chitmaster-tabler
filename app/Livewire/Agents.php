@@ -12,6 +12,7 @@ class Agents extends Component
 
     public $sortField = 'id'; // Default sorting field
     public $sortAsc = true; // Default sorting direction
+    public $entries = '12';
     
     public function sortBy($field)
     {
@@ -21,7 +22,7 @@ class Agents extends Component
     
     public function render()
     {
-        $agents = Agent::orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc')->latest()->paginate(12);
+        $agents = Agent::orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc')->latest()->paginate($this->entries);
 
         return view('livewire.agents',compact('agents'))->layout('tablar::page');
     }

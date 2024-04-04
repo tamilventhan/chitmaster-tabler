@@ -27,8 +27,8 @@
                     <li class="list-inline-item">
                         Copyright &copy; {{ date('Y') }}
                         <a href="https://chitmaster.com"
-                           class="link-primary">{{config('tablar.bottom_title', 'TabLar')}}</a>.
-                        All rights reserved.
+                           class="link-primary">{{config('tablar.bottom_title', 'TabLar')}}</a>
+                        All rights reserved
                     </li>
                     <li class="list-inline-item">
                         <a href="https://chitmaster.com" class="link-primary" rel="noopener">
