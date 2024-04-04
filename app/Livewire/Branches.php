@@ -12,6 +12,7 @@ class Branches extends Component
 
     public $sortField = 'id'; // Default sorting field
     public $sortAsc = true; // Default sorting direction
+    public $entries = 12;
     
     public function sortBy($field)
     {
@@ -25,7 +26,7 @@ class Branches extends Component
         $branches = Branch::with(['company', 'createdBy', 'updatedBy'])
                     ->orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc')
                     ->latest()
-                    ->paginate(12);
+                    ->paginate($this->entries);
 
         return view('livewire.branches',compact('branches'))->layout('tablar::page');
     }
