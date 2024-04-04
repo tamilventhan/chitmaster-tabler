@@ -5,6 +5,7 @@ use App\Livewire\Agents;
 use App\Livewire\Branches;
 use App\Livewire\Companies;
 use App\Livewire\Employees;
+use App\Livewire\Subscribers;
 use App\Livewire\Designations;
 use Illuminate\Support\Facades\Route;
 
@@ -27,3 +28,4 @@ Route::get('/companies',Companies::class)->name('companies');
 Route::get('/branches',Branches::class)->name('branches');
 Route::get('/designations',Designations::class)->name('designations');
 Route::get('/agents',Agents::class)->name('agents');
+Route::get('/subscribers',Subscribers::class)->name('subscribers');
