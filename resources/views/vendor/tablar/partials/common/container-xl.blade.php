@@ -9,7 +9,7 @@
 
         <div class="nav-item d-none d-md-flex me-3">
             <div class="btn-list">
-                @include('tablar::partials.header.header-button')
+                {{-- @include('tablar::partials.header.header-button') --}}
             </div>
         </div>
 
