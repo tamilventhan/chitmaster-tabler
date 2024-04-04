@@ -13,6 +13,7 @@ class Designations extends Component
     
     public $sortField = 'id'; // Default sorting field
     public $sortAsc = true; // Default sorting direction
+    public $entries = 12;
 
     
     public function sortBy($field)
@@ -28,7 +29,7 @@ class Designations extends Component
 
     public function render()
     {
-        $designations = Designation::orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc')->latest()->paginate(12);
+        $designations = Designation::orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc')->latest()->paginate($this->entries);
 
         return view('livewire.designations',compact('designations'))->layout('tablar::page');
     }

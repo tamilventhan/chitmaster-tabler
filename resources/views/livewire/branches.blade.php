@@ -1,4 +1,4 @@
-<div>
+<div class="col-12">
     <!-- Page header -->
     <div class="page-header d-print-none">
         <div class="container-xl">
@@ -55,7 +55,6 @@
                             </tr>
                         </thead>
                         <tbody>
-
                             @forelse ($branches as $branch)
                             <tr>
                                 <td><input class="form-check-input m-0 align-middle" type="checkbox"
