@@ -11,6 +11,7 @@ class Companies extends Component
     use WithPagination;
     public $sortField = 'id'; // Default sorting field
     public $sortAsc = true; // Default sorting direction
+    public $entries = 12;
 
     
     public function sortBy($field)
@@ -26,7 +27,7 @@ class Companies extends Component
 
     public function render()
     {
-        $companies = Company::orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc')->latest()->paginate(12);
+        $companies = Company::orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc')->latest()->paginate($this->entries);
 
         return view('livewire.companies',compact('companies'))->layout('tablar::page');
     }
