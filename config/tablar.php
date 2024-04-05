@@ -232,6 +232,16 @@ return [
                     'text' => 'Employees',
                     'url' => 'employees',
                     'icon' => 'ti ti-user-star',
+                ],
+                [
+                    'text' => 'Schemes',
+                    'url' => 'schemes',
+                    'icon' => 'ti ti-topology-star-3',
+                ],
+                [
+                    'text' => 'Policies',
+                    'url' => 'policies',
+                    'icon' => 'ti ti-checklist',
                 ]
             ],
         ],
