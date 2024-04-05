@@ -23,6 +23,13 @@ class Group extends Model
         'deleted_by',
     ];
 
+    protected $casts = [
+        'auction_date' => 'datetime',
+        'auction_time' => 'time',
+        'commencement' => 'date',
+        'termination' => 'date',
+    ];
+
         public function scheme()
     {
         return $this->belongsTo(Scheme::class);

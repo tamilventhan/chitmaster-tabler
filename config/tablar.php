@@ -175,7 +175,7 @@ return [
         [
             'text' => 'Chit Group',
             'icon' => 'ti ti-users-group',
-            'url' => 'chit-group',
+            'url' => 'groups',
         ],
         [
             'text' => 'Auctions',
