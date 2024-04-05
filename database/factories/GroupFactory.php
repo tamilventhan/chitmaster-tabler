@@ -3,6 +3,8 @@
 namespace Database\Factories;
 
 use App\Models\Group;
+use App\Models\Policy;
+use App\Models\Scheme;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**

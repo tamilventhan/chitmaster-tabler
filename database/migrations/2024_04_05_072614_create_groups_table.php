@@ -19,8 +19,8 @@ return new class extends Migration
             $table->date('commencement')->nullable();
             $table->date('termination')->nullable();
 
-            $table->unsignedBigInteger('scheme_id');
-            $table->unsignedBigInteger('policy_id');
+            $table->unsignedBigInteger('scheme_id')->nullable();
+            $table->unsignedBigInteger('policy_id')->nullable();
             $table->unsignedBigInteger('created_by')->nullable();
             $table->unsignedBigInteger('updated_by')->nullable();
             $table->unsignedBigInteger('deleted_by')->nullable();
