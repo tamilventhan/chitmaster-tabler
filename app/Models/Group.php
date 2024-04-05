@@ -24,8 +24,8 @@ class Group extends Model
     ];
 
     protected $casts = [
-        'auction_date' => 'datetime',
-        'auction_time' => 'time',
+        'auction_date' => 'date',
+        'auction_time' => 'datetime',
         'commencement' => 'date',
         'termination' => 'date',
     ];

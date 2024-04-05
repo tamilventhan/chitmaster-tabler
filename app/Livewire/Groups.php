@@ -13,11 +13,19 @@ class Groups extends Component
     public $sortField = 'id';
     public $sortAsc = true;
     public $entries = 12;
+    public $groupInfo;
     
     public function sortBy($field)
     {
         $this->sortField = $field === $this->sortField ? $this->sortField : $field;
         $this->sortAsc = $this->sortField === $field ? !$this->sortAsc : true;
+    }
+
+    public function viewGroup($id)
+    {
+        $group = Group::find($id);
+        $this->groupInfo = $group;
+        $this->dispatch('openModal');
     }
     
     public function render()
