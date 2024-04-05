@@ -29,6 +29,6 @@ class Companies extends Component
     {
         $companies = Company::orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc')->latest()->paginate($this->entries);
 
-        return view('livewire.companies',compact('companies'))->layout('tablar::page');
+        return view('livewire.companies.index',compact('companies'))->layout('tablar::page');
     }
 }

@@ -24,6 +24,6 @@ class Subscribers extends Component
     {
         $subscribers = Subscriber::orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc')->latest()->paginate($this->entries);
 
-        return view('livewire.subscribers',compact('subscribers'))->layout('tablar::page');
+        return view('livewire.subscribers.index',compact('subscribers'))->layout('tablar::page');
     }
 }

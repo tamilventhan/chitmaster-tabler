@@ -24,6 +24,6 @@ class Agents extends Component
     {
         $agents = Agent::orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc')->latest()->paginate($this->entries);
 
-        return view('livewire.agents',compact('agents'))->layout('tablar::page');
+        return view('livewire.agents.index',compact('agents'))->layout('tablar::page');
     }
 }

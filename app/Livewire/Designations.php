@@ -31,6 +31,6 @@ class Designations extends Component
     {
         $designations = Designation::orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc')->latest()->paginate($this->entries);
 
-        return view('livewire.designations',compact('designations'))->layout('tablar::page');
+        return view('livewire.designations.index',compact('designations'))->layout('tablar::page');
     }
 }

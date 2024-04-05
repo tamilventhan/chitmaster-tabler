@@ -15,9 +15,9 @@
     <div class="page-body">
         <div class="container-xl">
             <div class="card">
-                <div class="card-header">
+                {{-- <div class="card-header">
                     <h3 class="card-title">Index</h3>
-                </div>
+                </div> --}}
                 <div class="card-body border-bottom py-3">
                     <div class="d-flex">
                         <div class="text-muted">

@@ -15,6 +15,6 @@ class Employees extends Component
 
         $employees =User::paginate(12);
         
-        return view('livewire.employees',compact('employees'))->layout('tablar::page');
+        return view('livewire.employees.index',compact('employees'))->layout('tablar::page');
     }
 }

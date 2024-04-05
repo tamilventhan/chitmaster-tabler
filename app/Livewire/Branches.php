@@ -28,6 +28,6 @@ class Branches extends Component
                     ->latest()
                     ->paginate($this->entries);
 
-        return view('livewire.branches',compact('branches'))->layout('tablar::page');
+        return view('livewire.branches.index',compact('branches'))->layout('tablar::page');
     }
 }
