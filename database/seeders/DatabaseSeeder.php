@@ -5,7 +5,10 @@ namespace Database\Seeders;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Agent;
+use App\Models\Group;
 use App\Models\Branch;
+use App\Models\Policy;
+use App\Models\Scheme;
 use App\Models\Company;
 use App\Models\Subscriber;
 use App\Models\Designation;
@@ -25,6 +28,9 @@ class DatabaseSeeder extends Seeder
         Agent::factory(10)->create();
         Designation::factory(10)->create();
         Subscriber::factory(10)->create();
+        Scheme::factory(10)->create();
+        Policy::factory(10)->create();
+        Group::factory(10)->create();
 
         User::factory()
             ->count(1)
