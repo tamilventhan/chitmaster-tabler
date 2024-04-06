@@ -1,5 +1,5 @@
 <div>
-    <!-- Page header -->
+    {{-- <!-- Page header -->
     <div class="page-header d-print-none">
         <div class="container-xl">
             <div class="row g-2 align-items-center">
@@ -10,14 +10,14 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- Page body -->
     <div class="page-body">
         <div class="container-xl">
             <div class="card">
-                {{-- <div class="card-header">
-                    <h3 class="card-title">Index</h3>
-                </div> --}}
+                <div class="card-header">
+                    <h3 class="card-title">List of Designations</h3>
+                </div>
                 <div class="card-body border-bottom py-3">
                     <div class="d-flex">
                         <div class="text-muted">
