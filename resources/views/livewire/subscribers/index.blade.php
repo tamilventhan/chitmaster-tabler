@@ -42,19 +42,19 @@
                             <tr>
                                 <th class="w-1"><input class="form-check-input m-0 align-middle" type="checkbox"
                                         aria-label="Select all invoices"></th>
-                                <th wire:click="sortBy('first_name')"><button class="table-sort"
+                                <th wire:click="sortBy('first_name')"><button class="table-sort {{ $sortField === 'first_name' ? ($sortAsc ? 'asc' : 'desc') : '' }}"
                                         data-sort="sort-first_name">Name of subscriber</button></th>
-                                <th wire:click="sortBy('Gender')"><button class="table-sort"
+                                <th wire:click="sortBy('Gender')"><button class="table-sort {{ $sortField === 'Gender' ? ($sortAsc ? 'asc' : 'desc') : '' }}"
                                         data-sort="sort-Gender">Gender/Age</button></th>
-                                <th wire:click="sortBy('primary_mobile')"><button class="table-sort"
+                                <th wire:click="sortBy('primary_mobile')"><button class="table-sort {{ $sortField === 'primary_mobile' ? ($sortAsc ? 'asc' : 'desc') : '' }}"
                                         data-sort="sort-primary_mobile">Mobile</button></th>
-                                <th wire:click="sortBy('email')"><button class="table-sort"
+                                <th wire:click="sortBy('email')"><button class="table-sort {{ $sortField === 'email' ? ($sortAsc ? 'asc' : 'desc') : '' }}"
                                         data-sort="sort-email">Email</button></th>
-                                <th wire:click="sortBy('branch_id')"><button class="table-sort"
+                                <th wire:click="sortBy('branch_id')"><button class="table-sort {{ $sortField === 'branch_id' ? ($sortAsc ? 'asc' : 'desc') : '' }}"
                                         data-sort="sort-branch_id">Branch</button></th>
-                                <th wire:click="sortBy('status')"><button class="table-sort"
+                                <th wire:click="sortBy('status')"><button class="table-sort {{ $sortField === 'status' ? ($sortAsc ? 'asc' : 'desc') : '' }}"
                                         data-sort="sort-status">Status</button></th>
-                                <th wire:click="sortBy('status')"><button class="table-sort"
+                                <th wire:click="sortBy('status')"><button class="table-sort {{ $sortField === 'status' ? ($sortAsc ? 'asc' : 'desc') : '' }}"
                                         data-sort="sort-status">Enrolled By & Date</button></th>
                             </tr>
                         </thead>
