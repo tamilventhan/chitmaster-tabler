@@ -178,6 +178,11 @@ return [
             'url' => 'groups',
         ],
         [
+            'text' => 'Enrollments',
+            'icon' => 'ti ti-users-group',
+            'url' => 'enrollments',
+        ],
+        [
             'text' => 'Auctions',
             'icon' => 'ti ti-user-check',
             'url' => 'auctions',
