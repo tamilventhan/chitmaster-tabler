@@ -86,16 +86,7 @@
                                         <div class="dropdown">
                                             <a href="#" class="align-text-top"
                                                 data-bs-toggle="dropdown">
-                                                <!-- Download SVG icon from http://tabler-icons.io/i/dots-vertical -->
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24"
-                                                    height="24" viewBox="0 0 24 24" stroke-width="2"
-                                                    stroke="currentColor" fill="none" stroke-linecap="round"
-                                                    stroke-linejoin="round">
-                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                                    <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
-                                                    <path d="M12 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
-                                                    <path d="M12 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
-                                                </svg>
+                                                @include('icons.menu-deep')
                                             </a>
                                             <div class="dropdown-menu dropdown-menu-end">
                                                 <a class="dropdown-item" href="#">
@@ -107,31 +98,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    {{-- <div class="btn-list flex-nowrap">
-                                        <a href="#" class="btn btn-icon">
-                                            Show
-                                        </a>
-                                        <div class="dropdown">
-                                            <button class="btn dropdown-toggle align-text-top"
-                                                data-bs-toggle="dropdown">
-                                                Actions
-                                            </button>
-                                            <div class="dropdown-menu dropdown-menu-end">
-                                                <a class="dropdown-item" href="#">
-                                                    Edit
-                                                </a>
-                                                <a class="dropdown-item" href="#">
-                                                    Delete
-                                                </a>
-                                                <a class="dropdown-item" href="#">
-                                                    Restore
-                                                </a>
-                                                <a class="dropdown-item" href="#">
-                                                    Force Delete
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div> --}}
                                 </td>
                             </tr>
                             @empty
