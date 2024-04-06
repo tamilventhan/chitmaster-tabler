@@ -1,6 +1,6 @@
 <div>
     <!-- Page header -->
-    <div class="page-header d-print-none">
+    {{-- <div class="page-header d-print-none">
         <div class="container-xl">
             <div class="row g-2 align-items-center">
                 <div class="col">
@@ -10,14 +10,31 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- Page body -->
     <div class="page-body">
         <div class="container-xl">
             <div class="card">
-                {{-- <div class="card-header">
-                    <h3 class="card-title">Index</h3>
-                </div> --}}
+                <div class="card-header justify-content-between">
+                    <h3 class="card-title">List of Schemes</h3>
+                    <div class="row g-2">
+                        <div class="col-7">
+                            <select name="actions" class="form-select form-select-sm form-select-primary w-100">
+                                <option disabled selected="selected" value="">Auction</option>
+                                <option value="edit">Edit</option>
+                                <option value="delete">Delete</option>
+                                <option value="restore">Restore</option>
+                                <option value="forceDelete">Force Delete</option>
+                            </select>
+                        </div>
+                        <div class="col-5">
+                            <button type="button" class="btn btn-sm btn-primary w-90">
+                                @include('icons.plus')
+                                Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
                 <div class="card-body border-bottom py-3">
                     <div class="d-flex">
                         <div class="text-muted">
@@ -74,21 +91,24 @@
                                 <td class="sort-deleted_by w-1"> {{ $scheme->deletedBy->name ?? '-' }}</td>
                                 <td class="text-right">
                                     <div class="card-actions btn-actions space-x-1">
-                                        <a href="#" class="btn-action bg-green-lt">
+                                        <a href="#" class="btn-action bg-green-lt" data-bs-trigger="hover"
+                                            data-bs-toggle="popover" data-bs-placement="top" data-bs-content="View">
                                             @include('icons.eye')
                                         </a>
-                                        <a href="#" class="btn-action bg-blue-lt">
+                                        <a href="#" class="btn-action bg-blue-lt" data-bs-trigger="hover"
+                                            data-bs-toggle="popover" data-bs-placement="top" data-bs-content="Edit">
                                             @include('icons.edit')
                                         </a>
-                                        <a href="#" class="btn-action bg-red-lt">
+                                        <a href="#" class="btn-action bg-red-lt" data-bs-trigger="hover"
+                                            data-bs-toggle="popover" data-bs-placement="top" data-bs-content="Delete">
                                             @include('icons.trash')
                                         </a>
-                                        <div class="dropdown">
-                                            <a href="#" class="align-text-top"
-                                                data-bs-toggle="dropdown">
+                                        <div class="dropdown" data-bs-trigger="hover" data-bs-toggle="popover"
+                                            data-bs-placement="top" data-bs-content="Special menu">
+                                            <a href="#" class="align-text-top" data-bs-toggle="dropdown">
                                                 @include('icons.menu-deep')
                                             </a>
-                                            <div class="dropdown-menu dropdown-menu-end">
+                                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
                                                 <a class="dropdown-item" href="#">
                                                     Restore
                                                 </a>
@@ -102,7 +122,7 @@
                             </tr>
                             @empty
                             <tr>
-                                <td colspan="7" class="text-center">No schemes Found</td>
+                                <td colspan="8" class="text-center">No schemes Found</td>
                             </tr>
                             @endforelse
                         </tbody>
