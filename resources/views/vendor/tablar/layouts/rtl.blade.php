@@ -10,6 +10,11 @@
         <div class="page-wrapper">
             <!-- Page Content -->
             @yield('content')
+            @if (isset($slot))
+            <main>
+                {{ $slot }}
+            </main>
+            @endif
             @include('tablar::partials.footer.bottom')
         </div>
     </div>
