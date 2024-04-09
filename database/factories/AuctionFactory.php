@@ -22,9 +22,9 @@ class AuctionFactory extends Factory
             
             'group_id' => Group::inRandomOrder()->first()->id,
             'enrollment_id' => Enrollment::inRandomOrder()->first()->id,
-            'date' => $faker->date(),
-            'time' => $faker->time(),
-            'bid_amount' => $faker->randomFloat(2, 0, 1000),
+            'date' => $this->faker->date(),
+            'time' => $this->faker->time(),
+            'bid_amount' => $this->faker->randomFloat(2, 0, 1000),
             'created_by' => null,
             'updated_by' => null,
             'deleted_by' => null,

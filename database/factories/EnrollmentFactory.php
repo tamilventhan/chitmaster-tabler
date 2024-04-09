@@ -5,7 +5,6 @@ namespace Database\Factories;
 use App\Models\User;
 use App\Models\Agent;
 use App\Models\Group;
-use App\Models\Employee;
 use App\Models\Enrollment;
 use App\Models\Subscriber;
 use App\Models\Relationship;
@@ -26,11 +25,11 @@ class EnrollmentFactory extends Factory
         return [
             
             'group_id' => Group::inRandomOrder()->first()->id,
-            'ticket' => $faker->randomNumber(),
+            'ticket' => $this->faker->randomNumber(),
             'subscriber_id' => Subscriber::inRandomOrder()->first()->id,
             'agent_id' => Agent::inRandomOrder()->first()->id,
-            'employee_id' => Employee::inRandomOrder()->first()->id,
-            'nominee' => $faker->name,
+            'employee_id' => User::inRandomOrder()->first()->id,
+            'nominee' => $this->faker->name,
             'relationship_id' => Relationship::inRandomOrder()->first()->id,
             'created_by' => User::inRandomOrder()->first()->id,
             'updated_by' => User::inRandomOrder()->first()->id,
