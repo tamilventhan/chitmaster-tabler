@@ -35,7 +35,8 @@ class Agent extends Model
         'application_form',         //to upload application form
         'branch_id',                //to know subscriber's branch
         'created_by',               //to know who created the subscriber
-        'updated_by',               //to know who updated the subscriber
+        'updated_by',
+        'deleted_by',               //to know who updated the subscriber
     ];
 
 

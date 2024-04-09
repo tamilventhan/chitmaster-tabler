@@ -17,6 +17,7 @@ class Branch extends Model
         'company_id',
         'created_by',
         'updated_by',
+        'deleted_by',
     ];
 
     protected $dates = [

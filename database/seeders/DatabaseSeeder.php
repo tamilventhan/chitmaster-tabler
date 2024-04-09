@@ -12,6 +12,7 @@ use App\Models\Scheme;
 use App\Models\Company;
 use App\Models\Subscriber;
 use App\Models\Designation;
+use App\Models\Relationship;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
@@ -31,6 +32,8 @@ class DatabaseSeeder extends Seeder
         Scheme::factory(10)->create();
         Policy::factory(10)->create();
         Group::factory(10)->create();
+        Relationship::factory(10)->create();
+        Enrollment::factory(10)->create();
 
         User::factory()
             ->count(1)

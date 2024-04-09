@@ -16,6 +16,7 @@ class Company extends Model
         'active',
         'created_by',
         'updated_by',
+        'deleted_by',
     ];
 
     protected $dates = [

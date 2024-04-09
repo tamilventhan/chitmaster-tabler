@@ -16,6 +16,7 @@ class Scheme extends Model
         'chit_month',
         'created_by',
         'updated_by',
+        'deleted_by',
     ];
 
     /*** Get the user who created the scheme. */

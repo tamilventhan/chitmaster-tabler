@@ -36,7 +36,8 @@ class Subscriber extends Model
         'agent_id',                 //for Introducer mapping purpose
         'branch_id',                //to know subscriber's branch
         'created_by',               //to know who created the subscriber
-        'updated_by',               //to know who updated the subscriber
+        'updated_by',
+        'deleted_by',               //to know who updated the subscriber
     ];
 
         /*** Get the agent associated with the subscriber. */
