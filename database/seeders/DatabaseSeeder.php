@@ -9,6 +9,7 @@ use App\Models\Group;
 use App\Models\Branch;
 use App\Models\Policy;
 use App\Models\Scheme;
+use App\Models\Auction;
 use App\Models\Company;
 use App\Models\Subscriber;
 use App\Models\Designation;
@@ -34,6 +35,7 @@ class DatabaseSeeder extends Seeder
         Group::factory(10)->create();
         Relationship::factory(10)->create();
         Enrollment::factory(10)->create();
+        Auction::factory(10)->create();
 
         User::factory()
             ->count(1)
