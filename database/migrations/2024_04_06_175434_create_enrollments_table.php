@@ -11,11 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('schemes', function (Blueprint $table) {
+        Schema::create('enrollments', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->unique();
-            $table->decimal('chit_value', 16, 2);
-            $table->integer('chit_month');
+            $table->unsignedBigInteger('group_id');
+            $table->integer('ticket');
+            $table->unsignedBigInteger('subscriber_id')->nullable();
+            $table->unsignedBigInteger('agent_id')->nullable();
+            $table->unsignedBigInteger('employee_id')->nullable();
+            $table->string('nominee')->nullable();
+            $table->unsignedBigInteger('relationship_id')->nullable();
 
             $table->timestamps();
             $table->softDeletes();
@@ -26,6 +30,7 @@ return new class extends Migration
             $table->foreign('created_by')->references('id')->on('users')->onDelete('set null');
             $table->foreign('updated_by')->references('id')->on('users')->onDelete('set null');
             $table->foreign('deleted_by')->references('id')->on('users')->onDelete('set null');
+
         });
     }
 
@@ -34,6 +39,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('schemes');
+        Schema::dropIfExists('enrollments');
     }
 };

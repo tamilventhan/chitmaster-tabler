@@ -29,11 +29,12 @@ return new class extends Migration
             $table->decimal('tds_with_pan')->nullable();
             $table->decimal('tds_without_pan')->nullable();
             $table->decimal('gst')->nullable();
+
+            $table->timestamps();
+            $table->softDeletes();
             $table->unsignedBigInteger('created_by')->nullable();
             $table->unsignedBigInteger('updated_by')->nullable();
             $table->unsignedBigInteger('deleted_by')->nullable();
-            $table->timestamps();
-            $table->softDeletes();
 
             $table->foreign('created_by')->references('id')->on('users')->onDelete('set null');
             $table->foreign('updated_by')->references('id')->on('users')->onDelete('set null');

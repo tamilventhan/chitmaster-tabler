@@ -21,14 +21,16 @@ return new class extends Migration
 
             $table->unsignedBigInteger('scheme_id')->nullable();
             $table->unsignedBigInteger('policy_id')->nullable();
+
+            $table->timestamps();
+            $table->softDeletes();
             $table->unsignedBigInteger('created_by')->nullable();
             $table->unsignedBigInteger('updated_by')->nullable();
             $table->unsignedBigInteger('deleted_by')->nullable();
-            $table->timestamps();
-            $table->softDeletes();
 
             $table->foreign('scheme_id')->references('id')->on('schemes')->onDelete('set null');
             $table->foreign('policy_id')->references('id')->on('policies')->onDelete('set null');
+
             $table->foreign('created_by')->references('id')->on('users')->onDelete('set null');
             $table->foreign('updated_by')->references('id')->on('users')->onDelete('set null');
             $table->foreign('deleted_by')->references('id')->on('users')->onDelete('set null');
