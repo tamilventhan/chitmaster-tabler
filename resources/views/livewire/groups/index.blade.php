@@ -40,138 +40,105 @@
 
                 <div class="row row-deck row-cards p-3">
                     @forelse ($groups as $group)
-                    <div class="col-sm-6 col-lg-3">
-                        {{-- <a href="#" class="card card-link card-link-pop" data-bs-toggle="modal" data-bs-target="#groupInfo"> --}}
-                        <a href="#" class="card card-link card-link-pop" wire:click.prevent="viewGroup({{ $group->id }})">
-                            <div class="card card-sm">
-                                <div class="ribbon ribbon-end ribbon-bookmark bg-red-lt">
-                                    {{-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        class="icon icon-tabler icons-tabler-outline icon-tabler-currency-rupee">
-                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                        <path d="M18 5h-11h3a4 4 0 0 1 0 8h-3l6 6" />
-                                        <path d="M7 9l11 0" />
-                                    </svg> --}}
-                                </div>
+
+                    <div class="col-md-6 col-lg-3">
+                        <a href="javascript:void(0)" wire:click.prevent="viewGroup({{ $group->id }})">
+                            <div class="card card-link card-link-pop" wire:key="{{ $group->id }}">
+                                @if ($group->commencement->diffInDays(now()) <= 30)
+                                    <div class="ribbon ribbon-top bg-red">
+                                        New
+                                    </div>
+                                @endif
+
                                 @php
-                                $formatter = new NumberFormatter('en_IN', NumberFormatter::SPELLOUT);
-                                $words = $formatter->format($group->scheme->chit_value);
+                                    $formatter = new NumberFormatter('en_IN', NumberFormatter::SPELLOUT);
+                                    $words = $formatter->format($group->scheme->chit_value);
                                 @endphp
                                 <div class="card-body">
-                                    <div class="text-uppercase h3 text-secondary font-weight-medium"><strong>{{
-                                            $group->name??'' }}</strong></div>
-                                    <span class="text-center">
-                                        <div class="h2 fw-bold my-3">{{ ucfirst($words) }}</div>
-                                        <ul class="list-unstyled lh-lg">
-                                            <li>{{ number_format($group->scheme->chit_value, 0) }} X {{
-                                                $group->scheme->chit_month??'' }} M</li>
-                                        </ul>
+
+                                    <h2 class="badge badge-outline text-teal mb-3">{{ $group->name??'' }}</h2>
+                                    <span class="list-group-item list-group-item-action d-flex align-items-center" href="#">
+                                        Chit Value
+                                        <span class="text-secondary ms-auto">
+                                            {{ number_format($group->scheme->chit_value, 0)??'' }}
+                                            <strong>({{ ucfirst($words) }})</strong>
+                                        </span>
                                     </span>
-                                    <div class="d-flex justify-content-between">
-                                        <kbd class="d-flex align-items-center">
-                                            <span>@include('icons.calendar-stats')</span>
-                                            <span>{{ $group->commencement ? ' ' . $group->commencement->format('d-m-Y')
-                                                : '' }}</span>
-                                        </kbd>
-                                        <kbd class="d-flex align-items-center">
-                                            <span>@include('icons.calendar-off')</span>
-                                            <span>{{ $group->termination ? ' ' . $group->termination->format('d-m-Y') :
-                                                '' }}</span>
-                                        </kbd>
-                                    </div>
+
+                                    <span class="list-group-item list-group-item-action d-flex align-items-center" href="#">
+                                        Denomination
+                                        <span class="text-secondary ms-auto">
+                                            {{ number_format($group->scheme->chit_value, 0) }} X {{
+                                            $group->scheme->chit_month.'M'??'' }}
+                                        </span>
+                                    </span>
+
+                                    <span class="list-group-item list-group-item-action d-flex align-items-center" href="#">
+                                        Commencement
+                                        <span class="text-secondary ms-auto">
+                                            {{ $group->commencement ? ' ' . $group->commencement->format('d-m-Y') : '' }}
+                                        </span>
+                                    </span>
+
+                                    <span class="list-group-item list-group-item-action d-flex align-items-center" href="#">
+                                        Termination
+                                        <span class="text-secondary ms-auto">
+                                            {{ $group->termination ? ' ' . $group->termination->format('d-m-Y') : '' }}
+                                        </span>
+                                    </span>
+                                </div>
+                                @php
+                                    $encodedGroupId = base64_encode($group->id);
+                                @endphp
+                                <div class="card-footer d-flex justify-content-between">
+                                    <div></div>
+                                    <a wire:navigate href="{{ route('enrollments',['group' => $encodedGroupId]) }}" class="btn btn-sm btn-primary btn-block">
+                                        View Details
+                                    </a>
                                 </div>
                             </div>
                         </a>
                     </div>
-                    @empty
-                    <div class="text-center">No Chit Groups Found</div>
-                    @endforelse
-                </div>
+                @empty
+                <div class="text-center">No Chit Groups Found</div>
+                @endforelse
+            </div>
 
-
-                {{-- <div class="table-responsive">
-                    <table class="table card-table table-vcenter text-nowrap datatable">
-                        <thead>
-                            <tr>
-                                <th class="w-1"><input class="form-check-input m-0 align-middle" type="checkbox"
-                                        aria-label="Select all invoices"></th>
-                                <th wire:click="sortBy('name')"><button class="table-sort" data-sort="sort-name">Name of
-                                        group</button></th>
-                                <th wire:click="sortBy('company_id')"><button class="table-sort"
-                                        data-sort="sort-company_id">Name of company</button></th>
-                                <th wire:click="sortBy('active')"><button class="table-sort"
-                                        data-sort="sort-active">Status</button></th>
-                                <th wire:click="sortBy('created_by')"><button class="table-sort"
-                                        data-sort="sort-created_by">Created By</button></th>
-                                <th wire:click="sortBy('updated_by')"><button class="table-sort"
-                                        data-sort="sort-updated_by">Updated By</button></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @forelse ($groups as $group)
-                            <tr>
-                                <td><input class="form-check-input m-0 align-middle" type="checkbox"
-                                        aria-label="Select invoice"></td>
-                                <td class="sort-name">{{ $group->name ?? '' }}</td>
-                                <td class="sort-company_id">{{ $group->company->name ?? '' }}</td>
-                                <td class="sort-active">
-                                    @if($group->active)
-                                    <span class="badge bg-green-lt">Active</span>
-                                    @else
-                                    <span class="badge bg-red-lt">Inactive</span>
-                                    @endif
-                                </td>
-                                <td class="sort-created_by">
-                                    {{ $group->createdby->name ?? ''}} <br>
-                                    {{ $group->created_at->format('d-m-Y h:i A') ?? '' }} <br> {{
-                                    $group->created_at->diffForHumans() }}
-                                </td>
-
-                                <td class="sort-updated_by">
-                                    {{ $group->updatedby->name ?? '' }}
-                                    {{ $group->updated_at->format('d-m-Y h:i A') ?? '' }} <br> {{
-                                    $group->updated_at->diffForHumans() ?? '' }}
-                                </td>
-                            </tr>
-                            @empty
-                            <tr>
-                                <td colspan="7" class="text-center">No Groups Found</td>
-                            </tr>
-                            @endforelse
-                        </tbody>
-                    </table>
-                </div> --}}
-                <div class="card-footer d-flex align-items-center">
-                    {{ $groups->links('tablar::pagination') }}
-                </div>
+            <div class="card-footer d-flex align-items-center">
+                {{ $groups->links('tablar::pagination') }}
             </div>
         </div>
     </div>
+</div>
 
-    <div class="modal modal-blur fade" id="viewGroup" tabindex="-1" style="display: none;" data-bs-backdrop="static" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Chit Group - {{ $groupInfo->name??'' }}</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-6">
+<div class="modal modal-blur fade" id="viewGroup" tabindex="-1" style="display: none;" data-bs-backdrop="static"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Chit Group - {{ $groupInfo->name??'' }}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
                         <dl class="row">
                             <dt class="col-7">Chit Amount:</dt>
                             <dd class="col-5">{{ $groupInfo->scheme->chit_value??'' }}</dd>
                             <dt class="col-7">No.of Month</dt>
                             <dd class="col-5">{{ $groupInfo->scheme->chit_month??'' }}M</dd>
                             <dt class="col-7">Auction Date</dt>
-                            <dd class="col-5">{{ optional($groupInfo)->auction_date ? $groupInfo->auction_date->format('d-m-Y') : '' }}</dd>
+                            <dd class="col-5">{{ optional($groupInfo)->auction_date ?
+                                $groupInfo->auction_date->format('d-m-Y') : '' }}</dd>
                             <dt class="col-7">Auction Time</dt>
-                            <dd class="col-5">{{ optional($groupInfo)->auction_time ? $groupInfo->auction_time->format('h:i A') : '' }}</dd>
+                            <dd class="col-5">{{ optional($groupInfo)->auction_time ?
+                                $groupInfo->auction_time->format('h:i A') : '' }}</dd>
                             <dt class="col-7">Commencement Date</dt>
-                            <dd class="col-5">{{ optional($groupInfo)->commencement ? $groupInfo->commencement->format('d-m-Y') : '' }}</dd>
+                            <dd class="col-5">{{ optional($groupInfo)->commencement ?
+                                $groupInfo->commencement->format('d-m-Y') : '' }}</dd>
                             <dt class="col-7">Termination Date</dt>
-                            <dd class="col-5">{{ optional($groupInfo)->termination ? $groupInfo->termination->format('d-m-Y') : '' }}</dd>
+                            <dd class="col-5">{{ optional($groupInfo)->termination ?
+                                $groupInfo->termination->format('d-m-Y') : '' }}</dd>
                             <dt class="col-7">Penalty ps (%)</dt>
                             <dd class="col-5">{{ $groupInfo->policy->penalty_ps??'' }} %</dd>
                             <dt class="col-7">Penalty nps (%)</dt>
@@ -181,8 +148,8 @@
                             <dt class="col-7">Company commission (%)</dt>
                             <dd class="col-5">{{ $groupInfo->policy->company_commission??'' }} %</dd>
                         </dl>
-                        </div>
-                        <div class="col-md-6">
+                    </div>
+                    <div class="col-md-6">
                         <dl class="row">
                             <dt class="col-7">Agent commission (%)</dt>
                             <dd class="col-5">{{ $groupInfo->policy->agent_commission??'' }} %</dd>
@@ -203,16 +170,15 @@
                             <dt class="col-7">GST</dt>
                             <dd class="col-5">{{ $groupInfo->policy->gst??'' }}</dd>
                         </dl>
-                        </div>
                     </div>
                 </div>
-                {{-- <div class="modal-footer">
-                    <button type="button" class="btn btn-link link-secondary me-1" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn me-1" data-bs-dismiss="modal">Close</button>
-                </div> --}}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-link link-secondary me-1" data-bs-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
+</div>
 </div>
 @push('js')
 <script>

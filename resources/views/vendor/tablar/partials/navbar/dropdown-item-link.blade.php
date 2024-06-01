@@ -1,5 +1,5 @@
 <li class="nav-item {{ $item['class'] }}" @isset($item['id']) id="{{ $item['id'] }}" @endisset>
-    <a wire:navigate.hover class="nav-link " @isset($item['target']) target="{{ $item['target'] }}" @endisset
+    <a wire:navigate class="nav-link " @isset($item['target']) target="{{ $item['target'] }}" @endisset
     {!! $item['data-compiled'] ?? '' !!}
     href="{{ $item['href'] }}">
                     <span class="nav-link-icon d-md-none d-lg-inline-block">
